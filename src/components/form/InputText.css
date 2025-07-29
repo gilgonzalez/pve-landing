@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #A2A199;
+}
+
+.input { 
+  @apply bg-transparent border-b border-b-gray-400 placeholder-gray-500 text-gray-100 focus:outline-none pb-2 capitalize w-full; 
+} 
+
+.input::placeholder{ 
+  @apply text-primary; 
+} 
+
+/* Cambia el border-bottom al enfocar */ 
+.input:focus { 
+  @apply outline-none border-b-white; 
+} 
+
+.input:-webkit-autofill{ 
+  @apply bg-transparent; 
+  -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important; 
+  -webkit-text-fill-color: #A2A199; /* Color primary */ 
+}
+
+.error-message {
+  @apply text-red-500 text-sm mt-1 block;
+}

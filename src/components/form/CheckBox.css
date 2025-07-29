@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #A2A199;
+}
+
+.checkbox { 
+  @apply w-5 h-5 border-2 border-gray-500 bg-transparent rounded-sm aspect-square cursor-pointer appearance-none relative block; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+} 
+
+/* Estilos cuando está marcado */ 
+.checkbox:checked { 
+  background-color: black; 
+  border-color: white; 
+} 
+
+/* Cruce blanca al marcar */ 
+.checkbox:checked::before { 
+  @apply text-sm text-white font-bold block text-center leading-3; 
+  content: '✓'; /* Símbolo de check */ 
+}
+
+.checkbox-label {
+  @apply text-primary;
+}

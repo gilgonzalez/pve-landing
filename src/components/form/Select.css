@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #A2A199;
+}
+
+.select { 
+  @apply bg-transparent border-b border-b-gray-400 text-gray-100 focus:outline-none pb-2 cursor-pointer appearance-none; 
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23A2A199" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+} 
+
+
+/* Cambia el border-bottom al enfocar */ 
+.select:focus { 
+  @apply outline-none border-b-white; 
+} 
+
+.select.error {
+  @apply border-b-red-500;
+}
+
+.select option {
+  @apply bg-black text-primary;
+}
+
+.error-message {
+  @apply text-red-500 text-sm mt-1 block;
+}

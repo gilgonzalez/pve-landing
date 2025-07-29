@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #A2A199;
+}
+
+.radio-label{ 
+  @apply font-light flex flex-row gap-4 items-center text-primary text-base lg:text-lg; 
+} 
+
+.radio-input { 
+  @apply w-5 h-5 border-2 border-gray-500 bg-transparent rounded-sm aspect-square cursor-pointer appearance-none relative block; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+} 
+
+.radio-input-container{ 
+  @apply flex flex-col gap-4; 
+} 
+
+.radio-input-label{ 
+  @apply font-light text-xl tracking-wide text-primary; 
+} 
+
+/* Estilos cuando está marcado */ 
+.radio-input:checked { 
+  background-color: black; 
+  border-color: white; 
+} 
+
+/* Cruce blanca al marcar */ 
+.radio-input:checked::before { 
+  content: 'X'; /* Símbolo de check */ 
+  color: white; 
+  font-size: 14px; 
+  font-weight: bold; 
+  display: block; 
+  text-align: center; 
+  line-height: 16px; /* Centrado vertical */ 
+} 
+
+.radio-label:has(input:checked) { 
+  color: white; 
+} 
+
+.radio-color-selector { 
+  @apply aspect-square min-w-8 max-w-8 sm:min-w-10 sm:max-w-10 lg:min-w-12 lg:max-w-12 cursor-pointer rounded-full; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+} 
+
+.radio-color-selector:checked { 
+  @apply border-2 border-black outline; 
+}

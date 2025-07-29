@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #A2A199;
+  --color-cta-primary: #252525;
+  --color-cta-primary-hover: #1a1a1a;
+  --color-egg: #F0F0F0
+}
+.contenedor {
+  @apply p-4 sm:p-12 md:p-16 lg:p-18 xl:p-24;
+}
+.contenedor-2 {
+  @apply p-4 sm:pl-12 md:pl-16 lg:pl-18 xl:pl-24 sm:pr-4 md:pr-8 lg:pr-10 xl:pr-12 pb-24;
+}
+
+.top-banner {
+  @apply flex flex-row h-[10vh] items-center justify-items-start bg-black px-24
+}
+
+.bg-image-primary {
+  @apply lg:h-[90vh] h-[60vh] w-full bg-no-repeat bg-cover bg-[url('/images/bg-main.png')] flex flex-col lg:justify-between justify-around gap-4;
+}
+.heading-1 {
+  @apply text-2xl md:text-3xl lg:text-5xl font-light text-primary;
+}
+.heading-2 {
+  @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-primary;
+}
+.heading-3 {
+  @apply text-lg lg:text-3xl font-light text-primary;
+}
+.paragraph {
+  @apply text-sm md:text-base lg:text-lg text-primary font-light;
+}
+.cta-primary {
+  @apply bg-cta-primary px-8 py-2 rounded-full text-primary max-h-fit w-fit cursor-pointer hover:bg-cta-primary-hover transition-colors duration-300 hover:text-white hover:shadow-lg hover:shadow-white/10;
+}
+.bg-image-secondary {
+  @apply w-full h-[100vh] bg-no-repeat bg-center bg-cover bg-[url('/images/bg-secondary.png')] bg-black flex flex-col  lg:justify-center ;
+}
+.bg-image-terciary {
+  @apply w-full lg:h-[100vh] h-[60vh] bg-no-repeat bg-center bg-cover bg-[url('/images/bg-terciary.png')] bg-black flex flex-col  lg:justify-center ;
+}
+
+.bg-cut-gradient {
+  background: black;
+}
+
+@media (min-width: 1024px) {
+  .bg-cut-gradient {
+    background: linear-gradient(180deg, black 70%, theme('colors.egg') 70%);
+  }
+}
+
+/* Form Styles */
+.form-container {
+  @apply max-w-4xl mx-auto;
+}
+
+.form-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-12 uppercase tracking-wide leading-16;
+}
+
+.form-section {
+  @apply mb-8 lg:mb-12;
+}
+
+.form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8;
+}
+
+/* Forzar que los textareas ocupen toda la fila */
+.form-grid .textarea {
+  grid-column: 1 / -1 !important;
+}
+
+.form-field {
+  @apply mb-6;
+}
+
+/* Button Styles */
+.btn-submit-secondary {
+  @apply bg-primary w-fit text-black px-8 py-3 rounded-full mt-4 font-medium text-base lg:text-lg transition-all duration-300 hover:bg-white hover:shadow-lg cursor-pointer border-none outline-none;
+}
+
+.btn-submit-secondary:hover {
+  @apply transform hover:scale-105;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-title {
+    @apply text-2xl mb-8;
+  }
+  
+  .form-grid {
+    @apply gap-4;
+  }
+  
+  .btn-submit-secondary {
+    @apply w-full py-4;
+  }
+}
