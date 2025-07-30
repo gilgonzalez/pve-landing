@@ -3,11 +3,13 @@
 @theme {
   --color-primary: #A2A199;
   --color-cta-primary: #252525;
-  --color-cta-primary-hover: #1a1a1a;
+  --color-cta-secondary: #010;
+  --color-cta-primary-hover: #f1f1f1;
+  --color-cta-secondary-hover: #1a1a1a;
   --color-egg: #F0F0F0
 }
 .contenedor {
-  @apply p-4 sm:p-12 md:p-16 lg:p-18 xl:p-24;
+  @apply px-4 sm:px-12 md:px-16 lg:px-18 xl:px-24;
 }
 .contenedor-2 {
   @apply p-4 sm:pl-12 md:pl-16 lg:pl-18 xl:pl-24 sm:pr-4 md:pr-8 lg:pr-10 xl:pr-12 pb-24;
@@ -21,7 +23,7 @@
   @apply lg:h-[90vh] h-[60vh] w-full bg-no-repeat bg-cover bg-[url('/images/bg-main.png')] flex flex-col lg:justify-between justify-around gap-4;
 }
 .heading-1 {
-  @apply text-2xl md:text-3xl lg:text-5xl font-light text-primary;
+  @apply text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-light text-primary;
 }
 .heading-2 {
   @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-primary;
@@ -30,16 +32,19 @@
   @apply text-lg lg:text-3xl font-light text-primary;
 }
 .paragraph {
-  @apply text-sm md:text-base lg:text-lg text-primary font-light;
+  @apply text-sm md:text-base lg:text-lg xl:text-xl text-primary font-light;
 }
 .cta-primary {
-  @apply bg-cta-primary px-8 py-2 rounded-full text-primary max-h-fit w-fit cursor-pointer hover:bg-cta-primary-hover transition-colors duration-300 hover:text-white hover:shadow-lg hover:shadow-white/10;
+  @apply bg-cta-primary px-8 py-2 rounded-full text-primary max-h-fit w-fit cursor-pointer hover:bg-cta-primary-hover transition-colors duration-300 hover:text-black hover:shadow-lg hover:shadow-white/10 md:px-10 md:py-4 border border-egg;
+}
+.cta-secondary {
+  @apply bg-cta-secondary px-8 py-2 rounded-full text-primary max-h-fit w-fit cursor-pointer hover:bg-primary transition-colors duration-300 hover:text-white hover:shadow-lg hover:shadow-white/10 md:px-10 md:py-4 border border-primary;
 }
 .bg-image-secondary {
   @apply w-full h-[100vh] bg-no-repeat bg-center bg-cover bg-[url('/images/bg-secondary.png')] bg-black flex flex-col  lg:justify-center ;
 }
 .bg-image-terciary {
-  @apply w-full lg:h-[100vh] h-[60vh] bg-no-repeat bg-center bg-cover bg-[url('/images/bg-terciary.png')] bg-black flex flex-col  lg:justify-center ;
+  @apply w-full lg:h-[80vh] h-[60vh] bg-no-repeat bg-center bg-cover bg-[url('/images/bg-terciary.png')] bg-black flex flex-col  lg:justify-center ;
 }
 
 .bg-cut-gradient {
@@ -77,6 +82,7 @@
 .form-field {
   @apply mb-6;
 }
+
 
 /* Button Styles */
 .btn-submit-secondary {

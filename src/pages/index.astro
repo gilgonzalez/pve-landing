@@ -133,7 +133,7 @@ const formSchema: FieldConfig[] = [
 		<img src="/logo.svg" alt="Logo">
 	</div>
 	<!-- HERO SECTION -->
-	<div class="bg-image-primary contenedor">
+	<div class="bg-image-primary contenedor pb-8 md:pb-24">
 		<div class="flex-1"/>
 		<div class="flex-1 ">
 			<p class="heading-1">Un nuevo nivel <br> de elegancia <br> para su hogar</p>
@@ -152,7 +152,7 @@ const formSchema: FieldConfig[] = [
 	<div class="bg-image-secondary contenedor-2">
 		<div class="flex flex-col gap-12  flex-1 lg:justify-center justify-end">
 			<div class="flex flex-col lg:flex-row justify-between gap-12">
-				<p class="heading-3">En PVE redefinimos el <br> concepto de movilidad <br> vertical con una propuesta <br> que aúna tecnología, <br> diseño y distinción</p>
+				<p class="heading-2">En PVE redefinimos el <br> concepto de movilidad <br> vertical con una propuesta <br> que aúna tecnología, <br> diseño y distinción</p>
 				<p class=" max-w-80 paragraph">
 					Nuestros ascensores neumáticos para viviendas privadas no son únicamente una solución funcional, sino una declaración estética. Cada modelo se integra con la arquitectura del hogar, aportando un valor añadido tanto en confort como en exclusividad.
 				</p>
@@ -163,8 +163,8 @@ const formSchema: FieldConfig[] = [
 		</div>
 	</div>
 	<!-- THIRD SECTION -->
-	<div class="contenedor bg-cut-gradient min-h-fit">
-		<div class="flex flex-col md:flex-row justify-between gap-8">
+	<div class="contenedor bg-cut-gradient min-h-fit pt-8 md:pt-24">
+		<div class="flex flex-col md:flex-row justify-between gap-8 xl:max-w-7xl xl:mx-auto">
 			<div class="flex-2 flex justify-center lg:justify-start">
 				<img src="/images/pve-37-black.png" alt="MODELO PVE-37" class="max-h-96 lg:max-h-full">
 			</div>
@@ -173,14 +173,14 @@ const formSchema: FieldConfig[] = [
 					<p class="heading-2">Revalorización inmediata de la propiedad</p>
 					<p class="paragraph"><b class="font-bold">Revalorización inmediata de la propiedad Una inversión que eleva el valor de su vivienda.</b> Integrar un ascensor PVE es dar un paso adelante en términos de accesibilidad, pero también de posicionamiento. Este tipo de soluciones residenciales exclusivas son cada vez más valoradas en el mercado inmobiliario de alto nivel, donde los detalles marcan la diferencia.</p>
 				</div>
-				<a href="#form" class="cta-primary self-end">
+				<a href="#form" class="cta-secondary self-start">
 					Solicite presupuesto
 				</a>
 			</div>
 		</div>
 	</div>
 	<!-- WHITE SECTION -->
-	<div class="contenedor bg-image-terciary">
+	<div class="contenedor bg-image-terciary pb-8 md:pb-12 lg:pb-24">
 		<div class="flex flex-col gap-8 max-w-96 flex-1 lg:justify-end mt-4 lg:mt-0">
 				<p class="heading-2">Diseño que se adapta al alma de su casa </p>
 				<p class="paragraph max-w-54 lg:max-w-full ">
@@ -189,9 +189,9 @@ const formSchema: FieldConfig[] = [
 			</div>
 	</div>
 	<!-- LAST SECTION -->
-	<div class="contenedor bg-black">
+	<div class="contenedor bg-black py-8 md:py-12 lg:py-24">
 		<div class="flex flex-col items-center">
-			<img src="/images/pve-patentado.svg" alt="sello patentado pve">
+			<img src="/images/pve-patentado.svg" alt="sello patentado pve" >
 			
 			<div class="flex flex-col gap-8 items-center justify-center mb-12">
 				<p class="heading-2 text-center">Tecnología patentada. <br> Prestigio internacional.</p>
@@ -200,7 +200,7 @@ const formSchema: FieldConfig[] = [
 			<img src="/images/pve-52.png" alt="MODELO PVE-52">
 		</div>
 		<div class="flex flex-col-reverse md:flex-row gap-12 py-12">
-			<img src="/images/model.png" alt="MODELO PVE-30" class="w-full md:max-w-[50%]">
+			<img src="/images/model.png" alt="MODELO PVE-30" class="w-full md:max-w-[50%] mask-image">
 			<div class="flex flex-col gap-12 lg:gap-24 justify-center px-12">
 				<div class="flex flex-col gap-4">
 					<p class="heading-2">Silencio, fluidez y confort</p>
@@ -214,7 +214,7 @@ const formSchema: FieldConfig[] = [
 		</div>
 	</div>
 
-	<div id="form" class="contenedor bg-black">
+	<div id="form" class="contenedor bg-black pb-8 md:pb-12 lg:pb-24">
 		<Form schema={formSchema} acceptConditions client:load />
 	</div>
 </Layout>
