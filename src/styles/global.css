@@ -54,7 +54,7 @@
 
 /* Form Styles */
 .form-container {
-  @apply max-w-4xl mx-auto;
+  @apply max-w-6xl mx-auto;
 }
 
 .form-title {
@@ -99,5 +99,29 @@
   
   .btn-submit-secondary {
     @apply w-full py-4;
+  }
+}
+
+/* Scroll Smooth Configuration */
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Asegurar que funcione en todos los elementos scrollables */
+* {
+  scroll-behavior: smooth !important;
+}
+
+/* Respeta las preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  html, * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Configuración específica para Tailwind */
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
 }
