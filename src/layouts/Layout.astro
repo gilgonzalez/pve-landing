@@ -16,6 +16,8 @@ const {
 } = Astro.props;
 const canonicalURL = Astro.url.href;
 
+// Construir la URL absoluta para la imagen OG
+const absoluteImageUrl = new URL(image, Astro.url).href;
 
 ---
 
@@ -44,7 +46,7 @@ const canonicalURL = Astro.url.href;
 		<meta property="og:url" content={url} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={image} />
+		<meta property="og:image" content={absoluteImageUrl} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="Ascensor neumático PVE - Elegancia y tecnología para su hogar" />
@@ -56,7 +58,7 @@ const canonicalURL = Astro.url.href;
 		<meta name="twitter:url" content={url} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image" content={absoluteImageUrl} />
 		<meta name="twitter:image:alt" content="Ascensor neumático PVE - Elegancia y tecnología para su hogar" />
 		
 		<!-- Meta tags adicionales -->
