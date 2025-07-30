@@ -17,7 +17,9 @@ const {
 const canonicalURL = Astro.url.href;
 
 // Construir la URL absoluta para la imagen OG
-const absoluteImageUrl = 'https://pve-landing.vercel.app/images/pve-37-black.png';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || Astro.url.origin;
+const absoluteImageUrl = new URL(image, siteUrl).href;
+const absoluteUrl = new URL(Astro.url.pathname, siteUrl).href;
 
 ---
 
@@ -27,7 +29,7 @@ const absoluteImageUrl = 'https://pve-landing.vercel.app/images/pve-37-black.png
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="canonical" href={canonicalURL} />
+		<link rel="canonical" href={absoluteUrl} />
 		
 		<!-- Preconnect para fuentes -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +45,7 @@ const absoluteImageUrl = 'https://pve-landing.vercel.app/images/pve-37-black.png
 		<meta name="language" content="Spanish" />
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={url} />
+		<meta property="og:url" content={absoluteUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={absoluteImageUrl} />
@@ -55,7 +57,7 @@ const absoluteImageUrl = 'https://pve-landing.vercel.app/images/pve-37-black.png
 		
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={url} />
+		<meta name="twitter:url" content={absoluteUrl} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={absoluteImageUrl} />
@@ -72,8 +74,8 @@ const absoluteImageUrl = 'https://pve-landing.vercel.app/images/pve-37-black.png
 				"@type": "Organization",
 				"name": "PVE Ascensores",
 				"description": "Fabricante de ascensores neumáticos residenciales de lujo con tecnología patentada",
-				"url": "${url}",
-				"logo": "${new URL('/logo.svg', Astro.url).href}",
+				"url": "${absoluteUrl}",
+				"logo": "${new URL('/logo.svg', siteUrl).href}",
 				"sameAs": [],
 				"contactPoint": {
 					"@type": "ContactPoint",
