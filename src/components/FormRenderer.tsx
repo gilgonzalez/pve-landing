@@ -29,8 +29,8 @@ interface BaseFieldConfig {
 interface InputTextConfig extends BaseFieldConfig {
   type: 'text' | 'email'
   placeholder: string
-  inputType?: 'text' | 'email'
   defaultValue?: string
+  // Eliminamos inputType ya que ahora type maneja directamente el tipo de input
 }
 
 interface SelectConfig extends BaseFieldConfig {
@@ -132,14 +132,14 @@ const FormRenderer: React.FC<FormRendererProps> = ({
       <InputText
         {...commonProps}
         placeholder={field.placeholder}
-        type={field.inputType || field.type}
+        type="text"
       />
     ),
     email: (field: InputTextConfig, commonProps: any) => (
       <InputText
         {...commonProps}
         placeholder={field.placeholder}
-        type={field.inputType || field.type}
+        type="email"
       />
     ),
     select: (field: SelectConfig, commonProps: any) => (

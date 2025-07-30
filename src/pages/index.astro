@@ -22,13 +22,9 @@ const formSchema: FieldConfig[] = [
     type: 'email',
     name: 'email',
     placeholder: 'Email *',
-    inputType: 'email',
     rules: {
-      required: 'El email es obligatorio',
-      pattern: {
-        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-        message: 'Email inválido'
-      }
+      required: 'El email es obligatorio'
+      // La validación de patrón ahora se maneja automáticamente en InputText
     },
     gridColumn: '1 / 2'
   },

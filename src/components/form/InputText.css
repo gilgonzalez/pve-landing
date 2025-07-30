@@ -4,25 +4,83 @@
   --color-primary: #A2A199;
 }
 
+/* Estilos base para todos los inputs */
 .input { 
-  @apply bg-transparent border-b border-b-gray-400 placeholder-gray-500 text-gray-100 focus:outline-none pb-2 capitalize w-full; 
+  @apply bg-transparent border-b border-b-gray-400 placeholder-gray-500 text-gray-100 focus:outline-none pb-2 w-full transition-all duration-300; 
 } 
 
 .input::placeholder{ 
   @apply text-primary; 
 } 
 
-/* Cambia el border-bottom al enfocar */ 
-.input:focus { 
-  @apply outline-none border-b-white; 
-} 
+/* Estilos específicos para input de texto */
+.input-text {
+  /* Mantiene los estilos base */
+}
 
+.input-text:focus {
+  @apply border-b-white;
+}
+
+/* Estilos específicos para input de email - MISMO ESTILO QUE TEXT */
+.input-email {
+  /* Mantiene los estilos base, sin diferenciación de color */
+}
+
+.input-email:focus {
+  @apply border-b-white; /* Mismo color que text en focus */
+}
+
+.input-email::placeholder {
+  @apply text-primary; /* Mismo color que el resto */
+}
+
+/* Estados de error */
+.input.error {
+  @apply border-b-red-500;
+}
+
+.input.error:focus {
+  @apply border-b-red-400;
+}
+
+/* Contenedor del input */
+.input-container {
+  @apply relative w-full;
+}
+
+/* Indicador visual para email - CORREGIDO */
+.input-type-indicator {
+  @apply absolute right-0 top-0 text-primary text-sm pointer-events-none opacity-30 transition-opacity duration-300;
+  /* Posicionado en la esquina superior derecha, fuera del área de texto */
+  transform: translateY(-100%);
+  font-size: 10px;
+}
+
+/* Autofill styles */
 .input:-webkit-autofill{ 
   @apply bg-transparent; 
   -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important; 
   -webkit-text-fill-color: #A2A199; /* Color primary */ 
 }
 
+.input-email:-webkit-autofill {
+  -webkit-text-fill-color: #A2A199; /* Mismo color que el resto */
+}
+
+/* Mensaje de error */
 .error-message {
   @apply text-red-500 text-sm mt-1 block;
+}
+
+/* Animaciones y transiciones */
+.input:focus + .input-type-indicator {
+  @apply opacity-50; /* Ligeramente más visible en focus */
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .input-type-indicator {
+    font-size: 8px;
+  }
 }
